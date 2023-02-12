@@ -3,10 +3,7 @@ const mongoose = require('mongoose')
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://dudoan:${encodeURIComponent('dukick0333vx###')}@mern-web.ipht8bz.mongodb.net/?retryWrites=true&w=majority`, {
-
-        })
-
+        await mongoose.connect(`mongodb+srv://dudoan:${encodeURIComponent('dukick0333vx###')}@mern-web.ipht8bz.mongodb.net/?retryWrites=true&w=majority`, {})
         console.log('Mongoose Connected')
     } catch (error) {
         console.log(error.message)
