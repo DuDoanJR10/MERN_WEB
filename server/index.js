@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const authRouter = require('./routes/auth')
 
 const connectDB = async () => {
     try {
@@ -15,7 +16,7 @@ connectDB()
 
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/api/auth/', authRouter)
 
 const PORT = 5000
 
