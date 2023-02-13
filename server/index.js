@@ -1,10 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./routes/auth')
+require('dotenv').config()
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://dudoan:${encodeURIComponent('dukick0333vx###')}@mern-web.ipht8bz.mongodb.net/?retryWrites=true&w=majority`, {})
+        await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${encodeURIComponent(process.env.DB_PASSWORD)}@mern-web.ipht8bz.mongodb.net/?retryWrites=true&w=majority`, {})
         console.log('Mongoose Connected')
     } catch (error) {
         console.log(error.message)
@@ -15,6 +16,9 @@ const connectDB = async () => {
 connectDB()
 
 const app = express()
+
+// Đọc Data trong body với headers: 'application/json' 
+app.use(express.json())
 
 app.use('/api/auth/', authRouter)
 
