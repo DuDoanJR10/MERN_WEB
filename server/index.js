@@ -1,6 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
+
 const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
+
 require('dotenv').config()
 
 const connectDB = async () => {
@@ -20,7 +23,8 @@ const app = express()
 // Đọc Data trong body với headers: 'application/json' 
 app.use(express.json())
 
-app.use('/api/auth/', authRouter)
+app.use('/api/auth', authRouter)
+app.use('/api/posts', postRouter)
 
 const PORT = 5000
 

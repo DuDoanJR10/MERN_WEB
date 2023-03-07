@@ -2,8 +2,8 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "dudoan",
-    "password": "dukick0333vx"
+    "username": "jim",
+    "password": "jim"
 }
 
 ###
@@ -14,3 +14,35 @@ Content-Type: application/json
     "username": "dudoan",
     "password": "dukick0333vx"
 }
+
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2VhMTFhNDNhOGU4MTNhOGZmZGZiOTQiLCJpYXQiOjE2NzYyODQzMjR9.HXXsS7bupmewvsDFcutnH7jmYl2AkE7FbValj4SsoFY
+
+{
+    "title": "my three post",
+    "description": "Java",
+    "url": "google.com",
+    "status": "LEARNING"
+}
+
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2VhMDA2MjBhOTZiMWM3NThhYmRmOWEiLCJpYXQiOjE2NzcwMDM1MzV9.lR2r_9CE31bet_IDxNCMRpMsV33RZ2D_0HdecJ0FuQA
+
+###
+PUT http://localhost:5000/api/posts/63ea0b782d17cdbfb0594f0d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2VhMDA2MjBhOTZiMWM3NThhYmRmOWEiLCJpYXQiOjE2NzcwMDM1MzV9.lR2r_9CE31bet_IDxNCMRpMsV33RZ2D_0HdecJ0FuQA
+
+{
+    "title": "Vue JS",
+    "description": "VUEEEE",
+    "url": "https://vuejs.org",
+    "status": "LEARNING"
+}
+
+###
+DELETE  http://localhost:5000/api/posts/63ea11281e9e972e19604f0f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2VhMDA2MjBhOTZiMWM3NThhYmRmOWEiLCJpYXQiOjE2NzcwMDM1MzV9.lR2r_9CE31bet_IDxNCMRpMsV33RZ2D_0HdecJ0FuQA
