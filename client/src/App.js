@@ -6,6 +6,7 @@ import AuthContextProvider from './contexts/AuthContext';
 import Dashboard from './views/Dashboard'
 import ProtectedRoute from './components/routing/ProtectedRoute';
 import NotPage from './views/NotPage';
+import About from './views/About';
 
 function App() {
   return (
@@ -20,6 +21,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/about'
+            element={
+              <ProtectedRoute>
+                <About />
               </ProtectedRoute>
             }
           />
